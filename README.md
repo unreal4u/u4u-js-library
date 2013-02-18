@@ -12,10 +12,10 @@ Disclaimer
 --------------
 
 I'll always will try to maintain basic operation within my classes and ensure that they will do the job they say it does,
-but use these classes at your own risk! Most of them have been tested and are already being used in production websites,
-but my way of implementing the classes may differ from what you are doing, and in those cases, bugs can originate
-without me knowing about them. If you want to use my code, you are free to do so, but it is your responsability to test
-them thoroughly to ensure that they will work in your case scenario!
+but use these classes at your own risk! Most of them have been tested (with JSLint) and are already being used in
+production websites, but my way of implementing the classes may differ from what you are doing, and in those cases, bugs
+can originate without me knowing about them. If you want to use my code, you are free to do so, but it is your
+responsability to test them thoroughly to ensure that they will work in your case scenario!
 
 Classes description
 --------------
