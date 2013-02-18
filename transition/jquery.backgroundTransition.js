@@ -97,30 +97,27 @@
     };
 })(jQuery);
 /**
- * Plugin that performs the action of transitioning This plugin takes into
- * account several things such as jQuery version (delay() was introduced in
- * 1.4.0) and the options passed on to this plugin
+ * Plugin that performs the action of transitioning 
  * 
  * @author Camilo Sperberg
- * @param array
- *            options The options to apply, available options: defaultColor,
- *            transitionColor, transitionDuration, transitionDelay, repeat
+ * @param array options The options to apply, available options: defaultColor, transitionColor, transitionDuration, 
+ *                      transitionDelay, repeat
  */
 (function($){
+    "use strict";
     /**
      * Function itself
      */
     $.fn.backgroundTransition=function(options){
-        var opts=$.extend({},$.fn.backgroundTransition.defaults,options);
+        var i=0,opts=$.extend({},$.fn.backgroundTransition.defaults,options);
         return this.each(function(){
-            for( var i=0;i<opts.repeat;i=i+1){
+            for(i=0;i<opts.repeat;i=i+1){
                 $(this).animate({
                     'backgroundColor':opts.transitionColor
                 },opts.transitionDuration).delay(opts.transitionDelay).animate({
                     'backgroundColor':opts.defaultColor
                 },opts.transitionDuration);
             }
-            ;
         });
     };
     /**
