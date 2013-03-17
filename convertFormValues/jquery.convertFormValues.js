@@ -3,11 +3,21 @@
  */
 (function ($) {
     "use strict";
-    $.fn.convertFormValues = function () {
+    $.fn.convertFormValues = function (escapeOutput) {
         var returnString = '';
+        if (typeof escapeOutput == 'undefined') {
+            escapeOutput = false;
+        }
         this.find(':input').each(function () {
             if ($(this).attr('name').length > 0) {
-                returnString += $(this).attr('name') + '=' + $(this).val() + '&';
+                var inputName = $(this).attr('name');
+                var inputValue = $(this).val();
+                
+                if (escapeOutput == true) {
+                    inputName = escape(inputName);
+                    inputValue = escape(inputValue);
+                }
+                returnString += inputName + '=' + inputValue + '&';
             }
         });
         if (returnString.length > 0) {

@@ -1,15 +1,13 @@
 <?php
-
 include('../../htmlBasics.class.php');
 
 $htmlBasics = new htmlBasics();
-try {
-    print($htmlBasics->getHeader('convertFormValues'));
-} catch (Exception $e) {
-    die('plugin not found!');
-}
-?>
-<form id="mainForm" method="post" action="">
+
+echo $htmlBasics->getHeader('convertFormValues');
+
+$htmlBasics->debugToFirePHP();
+
+?><form id="mainForm" method="post" action="">
     <select name="selectBox1">
         <option value="">Select an option</option>
         <option value="1">1</option>
@@ -29,7 +27,7 @@ try {
         </optgroup>
     </select>
 
-    <textarea rows="10" cols="2" name="myTextarea">This is a special text</textarea>
+    <textarea rows="2" cols="10" name="myTextarea">This "is" a 'special' <br /> text with some strange characters</textarea>
 </form>
 
 <div class="mainDiv">
@@ -42,9 +40,14 @@ try {
     <input type="text" name="inputDiv3" value="A value 4" />
 </div>
 
-<script type="text/javascript">
-console.log($('#mainForm').convertFormValues());
-console.log($('.mainDiv').convertFormValues());
-</script>
+<input type="button" id="processAll" value="Process all" />
 
-<?php print($htmlBasics->getFooter());
+<script type="text/javascript">
+$('#processAll').click(function(){
+    console.log($('#mainForm').convertFormValues());
+    console.log($('#mainForm').convertFormValues(true));
+    console.log($('.mainDiv').convertFormValues());
+    console.log($('.mainDiv').convertFormValues(true));
+    console.log('------------------------------------------');
+});
+</script>
