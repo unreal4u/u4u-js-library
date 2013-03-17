@@ -20,8 +20,10 @@ responsability to test them thoroughly to ensure that they will work in your cas
 Classes description
 --------------
 
-* *transition*: A lightweight jQuery plugin that is able to do a background transition for the selected divs. You can
-  pass options to control it.
+* *backgroundTransition*: A lightweight jQuery plugin that is able to do a background transition for the selected divs.
+  You can pass options to control it.
+* *convertFormValues*: A simple function to convert form elements into a formatted string ready to be used as data in
+  an $.ajax request.
 
 How to use these classes
 --------------

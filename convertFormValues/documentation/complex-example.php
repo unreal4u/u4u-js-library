@@ -5,8 +5,6 @@ $htmlBasics = new htmlBasics();
 
 echo $htmlBasics->getHeader('convertFormValues');
 
-$htmlBasics->debugToFirePHP();
-
 ?><form id="mainForm" method="post" action="">
     <select name="selectBox1">
         <option value="">Select an option</option>
